@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header>
-      <h1>Logo</h1>
+      <h1>hrApp</h1>
     </header>
   );
 }
