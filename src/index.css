@@ -12,6 +12,7 @@ main {
   display: flex;
   border: solid 2px black;
   margin: 0.5em 0 0.5em 0;
+  padding: 5em;
   background-color: lightseagreen;
   justify-content: center;
   gap: 2em;
@@ -20,7 +21,6 @@ main {
 .card {
   background-color: whitesmoke;
   padding: 1em;
-  margin: 1em;
 }
 
 footer {

@@ -1,28 +1,6 @@
-function Header() {
-  return (
-    <header>
-      <h1>Logo</h1>
-    </header>
-  );
-}
-
-function Card(props) {
-  return (
-    <div className="card">
-      <h2>{props.name}</h2>
-      <p>Title: {props.title}</p>
-      <p>Age: {props.age}</p>
-    </div>
-  );
-}
-
-function Footer() {
-  return (
-    <footer>
-      <h3>copyright</h3>
-    </footer>
-  );
-}
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Card from "./components/Card";
 
 function App() {
   return (
