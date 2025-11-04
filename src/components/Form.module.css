@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-top: 2em;
+  padding: 1em;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  border: solid 2px black;
+  width: 300px;
+}
+
+.output {
+  margin-top: 0.5em;
+  background-color: lightgray;
+  border-radius: 8px;
+  border: solid 1px black;
+  padding: 0.5em 1em;
+}
