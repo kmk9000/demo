@@ -5,8 +5,8 @@ export default function Footer({ count, setCount }) {
   return (
     <footer>
       <h3>Copyright © 2025 Kalle Koivuniemi WP2025K. All rights reserved.</h3>
-      {/* <div>{count}</div>
-      <button onClick={() => setCount(count + 1)}>Increment</button> */}
+      <div>{count}</div>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
     </footer>
   );
 }

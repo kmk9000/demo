@@ -1,14 +1,26 @@
 import styles from "./Card.module.css";
 
-export default function Card(props) {
+export default function Card({
+  name,
+  title,
+  salary,
+  phone,
+  email,
+  animal,
+  isFavourite,
+  toggleFavourite,
+  id,
+}) {
   return (
     <div className={styles.card}>
-      <h2>{props.name}</h2>
-      <p>Title: {props.title}</p>
-      <p>Salary: {props.salary}</p>
-      <p>Phone: {props.phone}</p>
-      <p>Email: {props.email}</p>
-      <p>Animal: {props.animal}</p>
+      <button onClick={() => toggleFavourite(id)}>Toggle Favourite</button>
+      <h2>{name}</h2>
+      <p>Title: {title}</p>
+      <p>Salary: {salary}</p>
+      <p>Phone: {phone}</p>
+      <p>Email: {email}</p>
+      <p>Animal: {animal}</p>
+      <div className={styles.favourite}>{isFavourite && <span>❤️</span>}</div>
     </div>
   );
 }

@@ -24,6 +24,19 @@ function App() {
     ]);
   };
 
+  const toggleFavourite = (id) => {
+    const updatedEmployees = employees.map((employee) => {
+      if (employee.id && employee.isFavourite === undefined) {
+        return { ...employee, isFavourite: false };
+      } else if (employee.id === id) {
+        return { ...employee, isFavourite: !employee.isFavourite };
+      } else {
+        return employee;
+      }
+    });
+    setEmployees(updatedEmployees);
+  };
+
   return (
     <div className="container">
       <Header />
@@ -32,17 +45,13 @@ function App() {
         {employees.map((employee) => (
           <Card
             key={employee.id}
-            name={employee.name}
-            title={employee.title}
-            salary={employee.salary}
-            phone={employee.phone}
-            email={employee.email}
-            animal={employee.animal}
+            {...employee}
+            toggleFavourite={toggleFavourite}
           />
         ))}
         <Counter count={count} setCount={setCount} />
       </main>
-      <Footer />
+      <Footer count={count} setCount={setCount} />
     </div>
   );
 }

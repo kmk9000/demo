@@ -7,6 +7,7 @@ const data = [
     phone: "987-42-112",
     email: "tim@company.com",
     animal: "Lion",
+    isFavourite: true,
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const data = [
     phone: "123-45-678",
     email: "jim@company.com",
     animal: "Eagle",
+    isFavourite: false,
   },
   {
     id: 3,
