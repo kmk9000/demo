@@ -11,8 +11,7 @@ const Form = ({ formData, setFormData, handleClick }) => {
     e.preventDefault();
     handleClick();
     setFormData({
-      firstName: "",
-      lastName: "",
+      name: "",
       title: "",
       salary: "",
       phone: "",
@@ -70,6 +69,21 @@ const Form = ({ formData, setFormData, handleClick }) => {
         <button type="submit">Add employee</button>
         {/* Alternatively, you can use just button without submit type */}
         {/* <button type="button" onClick={handleClick}>Add Employee</button> */}
+        <button
+          type="button"
+          onClick={() =>
+            setFormData({
+              name: "",
+              title: "",
+              salary: "",
+              phone: "",
+              email: "",
+              animal: "",
+            })
+          }
+        >
+          Reset Form
+        </button>
         <div className={styles.output}>
           <p>Name: {formData.name}</p>
           <p>Title: {formData.title}</p>
