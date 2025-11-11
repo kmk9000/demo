@@ -9,11 +9,13 @@ export default function Card({
   animal,
   isFavourite,
   toggleFavourite,
+  handleDelete,
   id,
 }) {
   return (
     <div className={styles.card}>
       <button onClick={() => toggleFavourite(id)}>Toggle Favourite</button>
+      <button onClick={() => handleDelete(id)}>Delete</button>
       <h2>{name}</h2>
       <p>Title: {title}</p>
       <p>Salary: {salary}</p>
