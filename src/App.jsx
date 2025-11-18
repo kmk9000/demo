@@ -11,6 +11,8 @@ import Home from "./components/Home";
 import "./App.css";
 import ErrorPage from "./components/ErrorPage";
 import Layout from "./Layout";
+import Todos from "./components/Todos";
+import SingleEmployee from "./components/SingleEmployee";
 
 // function App() {
 //   return (
@@ -34,9 +36,18 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/employees/:id",
+        element: <SingleEmployee />,
+      },
+      {
         path: "/about",
         element: <About />,
       },
+      {
+        path: "/todos",
+        element: <Todos />,
+      },
+
       {
         path: "/*",
         element: <ErrorPage />,

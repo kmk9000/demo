@@ -17,10 +17,20 @@ function Home() {
     animal: "",
   });
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    axios.get("http://localhost:3001/employees").then((response) => {
-      setEmployees(response.data);
-    });
+    axios
+      .get("http://localhost:3001/employees")
+      .then((response) => {
+        setEmployees(response.data);
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   const handleDelete = (id) => {
@@ -57,6 +67,10 @@ function Home() {
     });
     setEmployees(updatedEmployees);
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>

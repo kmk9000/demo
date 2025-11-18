@@ -1,4 +1,5 @@
 import styles from "./Card.module.css";
+import { useNavigate } from "react-router";
 
 export default function Card({
   name,
@@ -12,6 +13,8 @@ export default function Card({
   handleDelete,
   id,
 }) {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.card}>
       <button onClick={() => toggleFavourite(id)}>Toggle Favourite</button>
@@ -23,6 +26,10 @@ export default function Card({
       <p>Email: {email}</p>
       <p>Animal: {animal}</p>
       <div className={styles.favourite}>{isFavourite && <span>❤️</span>}</div>
+      <button onClick={() => navigate(`/employees/${id}`)}>
+        {" "}
+        View Employee{" "}
+      </button>
     </div>
   );
 }

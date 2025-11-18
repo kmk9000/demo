@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import styles from "./Card.module.css";
 
 const About = () => {
   const navigate = useNavigate;
@@ -6,7 +7,7 @@ const About = () => {
     navigate("/");
   };
   return (
-    <div>
+    <div className={styles.card}>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dictum
         purus felis, eu molestie nibh porta ut. Etiam elementum interdum

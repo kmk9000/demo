@@ -22,6 +22,12 @@ main {
   gap: 3em;
 }
 
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 button {
   width: 10em;
   height: 4em;

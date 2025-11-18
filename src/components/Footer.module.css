@@ -6,4 +6,5 @@
   background-color: lightseagreen;
   text-align: center;
   box-shadow: 6px 6px 5px darkslategray;
+  max-height: 80px;
 }
