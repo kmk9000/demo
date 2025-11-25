@@ -1,0 +1,10 @@
+.footer {
+  flex: 1;
+  border: solid 2px black;
+  border-radius: 8px;
+  margin: 0.5em 1em 0.5em 1em;
+  background-color: lightseagreen;
+  text-align: center;
+  box-shadow: 6px 6px 5px darkslategray;
+  max-height: 80px;
+}

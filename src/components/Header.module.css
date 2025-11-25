@@ -1,0 +1,19 @@
+header {
+  flex: 1;
+  border: solid 2px black;
+  border-radius: 8px;
+  padding: 0 1em 0 1em;
+  margin: 0.5em 1em 0.5em 1em;
+  background-color: lightseagreen;
+  box-shadow: 6px 6px 5px darkslategray;
+  max-height: 80px;
+}
+
+nav {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-left: auto;
+  padding: 0.5em;
+  gap: 1em;
+}

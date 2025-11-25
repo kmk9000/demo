@@ -8,16 +8,6 @@ body {
   height: 100vh;
 }
 
-header {
-  flex: 1;
-  border: solid 2px black;
-  border-radius: 8px;
-  padding: 0 1em 0 1em;
-  margin: 0.5em 1em 0.5em 1em;
-  background-color: lightseagreen;
-  box-shadow: 6px 6px 5px darkslategray;
-}
-
 main {
   flex: 8;
   display: flex;
@@ -32,21 +22,20 @@ main {
   gap: 3em;
 }
 
-.card {
-  background-color: whitesmoke;
-  padding: 0.5em 2em;
-  border: solid 2px black;
-  border-radius: 8px;
-  width: 400px;
-  box-shadow: 6px 6px 5px darkslategray;
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-footer {
-  flex: 1;
+button {
+  width: 10em;
+  height: 4em;
   border: solid 2px black;
   border-radius: 8px;
-  margin: 0.5em 1em 0.5em 1em;
-  background-color: lightseagreen;
-  text-align: center;
+}
+
+button:hover {
+  scale: 1.1;
   box-shadow: 6px 6px 5px darkslategray;
 }

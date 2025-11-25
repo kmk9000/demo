@@ -1,12 +1,35 @@
-export default function Card(props) {
+import styles from "./Card.module.css";
+import { useNavigate } from "react-router";
+
+export default function Card({
+  name,
+  title,
+  salary,
+  phone,
+  email,
+  animal,
+  isFavourite,
+  toggleFavourite,
+  handleDelete,
+  id,
+}) {
+  const navigate = useNavigate();
+
   return (
-    <div className="card">
-      <h2>{props.name}</h2>
-      <p>Title: {props.title}</p>
-      <p>Salary: {props.salary}</p>
-      <p>Phone: {props.phone}</p>
-      <p>Email: {props.email}</p>
-      <p>Animal: {props.animal}</p>
+    <div className={styles.card}>
+      <button onClick={() => toggleFavourite(id)}>Toggle Favourite</button>
+      <button onClick={() => handleDelete(id)}>Delete</button>
+      <h2>{name}</h2>
+      <p>Title: {title}</p>
+      <p>Salary: {salary}</p>
+      <p>Phone: {phone}</p>
+      <p>Email: {email}</p>
+      <p>Animal: {animal}</p>
+      <div className={styles.favourite}>{isFavourite && <span>❤️</span>}</div>
+      <button onClick={() => navigate(`/employees/${id}`)}>
+        {" "}
+        View Employee{" "}
+      </button>
     </div>
   );
 }
