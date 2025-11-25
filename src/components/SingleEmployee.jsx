@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 import styles from "./Card.module.css";
+import useAxios from "../hooks/useAxios";
 
 const SingleEmployee = () => {
   const { id } = useParams();
   const [employee, setEmployee] = useState(null);
   console.log("Employee: ", employee);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     name: employee?.name || "",
@@ -17,6 +18,10 @@ const SingleEmployee = () => {
     email: employee?.email || "",
     animal: employee?.animal || "",
   });
+
+  const url = `http://localhost:3001/employees/${id}`;
+
+  const { data, loading, error } = useAxios(url);
 
   const handleChange = (e) => {
     setFormData((prevState) => {
@@ -38,25 +43,20 @@ const SingleEmployee = () => {
   };
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3001/employees/${id}`)
-      .then((response) => {
-        setEmployee(response.data);
-        setFormData({
-          name: response.data.name,
-          title: response.data.title,
-          salary: response.data.salary,
-          phone: response.data.phone,
-          email: response.data.email,
-          animal: response.data.animal,
-        });
-      })
-      .finally(() => {
-        setLoading(false);
+    if (data) {
+      setEmployee(data);
+      setFormData({
+        name: data.name,
+        title: data.title,
+        salary: data.salary,
+        phone: data.phone,
+        email: data.email,
+        animal: data.animal,
       });
-  }, [id]);
+    }
+  }, [id, data, loading]);
 
-  if (loading) {
+  if (loading || isLoading) {
     return <div>Loading...</div>;
   }
 
