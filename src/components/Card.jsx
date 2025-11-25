@@ -2,6 +2,7 @@ import styles from "./Card.module.css";
 import { useNavigate } from "react-router";
 import PropTypes from "prop-types";
 import { Button } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export default function Card({
   name = "Example Name",
@@ -20,9 +21,10 @@ export default function Card({
   return (
     <div className={styles.card}>
       <button onClick={() => toggleFavourite(id)}>Toggle Favourite</button>
-      <Button startIcon="delete" onClick={() => handleDelete(id)}>
-        Delete
-      </Button>
+      <Button
+        startIcon=<DeleteIcon />
+        onClick={() => handleDelete(id)}
+      ></Button>
       <button onClick={() => handleDelete(id)}>Delete</button>
       <h2>{name}</h2>
       <p>Title: {title}</p>
