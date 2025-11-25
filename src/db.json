@@ -55,16 +55,6 @@
       "phone": "444-33-222",
       "email": "david@company.com",
       "animal": "Bear"
-    },
-    {
-      "id": "386d",
-      "name": "Wendy Butler",
-      "title": "Culpa elit in quis ",
-      "salary": "Fugiat modi ex in ut",
-      "phone": "+1 (396) 547-3404",
-      "email": "sefeh@mailinator.com",
-      "animal": "Consequatur numquam",
-      "isFavourite": false
     }
   ],
   "somethingElse": [

@@ -3,7 +3,12 @@
   padding: 0.5em 2em;
   border: solid 2px black;
   border-radius: 8px;
-  max-width: 300px;
+  max-width: 800px;
   box-shadow: 6px 6px 5px darkslategray;
   margin: 1em;
+  text-align: justify;
+}
+
+h1 {
+  text-align: center;
 }

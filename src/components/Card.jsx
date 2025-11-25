@@ -1,6 +1,7 @@
 import styles from "./Card.module.css";
 import { useNavigate } from "react-router";
 import PropTypes from "prop-types";
+import { Button } from "@mui/material";
 
 export default function Card({
   name = "Example Name",
@@ -19,6 +20,9 @@ export default function Card({
   return (
     <div className={styles.card}>
       <button onClick={() => toggleFavourite(id)}>Toggle Favourite</button>
+      <Button startIcon="delete" onClick={() => handleDelete(id)}>
+        Delete
+      </Button>
       <button onClick={() => handleDelete(id)}>Delete</button>
       <h2>{name}</h2>
       <p>Title: {title}</p>

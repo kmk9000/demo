@@ -12,6 +12,7 @@ main {
   flex: 8;
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   border: solid 2px black;
   border-radius: 8px;
   margin: 0.5em 1em 0.5em 1em;
@@ -28,14 +29,14 @@ main {
   justify-content: center;
 }
 
-button {
+/* button {
   width: 10em;
   height: 4em;
   border: solid 2px black;
   border-radius: 8px;
-}
-
+} */
+/* 
 button:hover {
   scale: 1.1;
   box-shadow: 6px 6px 5px darkslategray;
-}
+} */

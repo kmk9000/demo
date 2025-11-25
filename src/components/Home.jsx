@@ -4,6 +4,9 @@ import Card from "../components/Card";
 import Counter from "../components/Counter";
 import Form from "../components/Form";
 import axios from "axios";
+import { Button } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+// you can either import like this for mui icons and components
 
 function Home() {
   const [count, setCount] = useState(0);
@@ -74,6 +77,13 @@ function Home() {
 
   return (
     <div>
+      <Button
+        variant="contained"
+        sx={{ backgroundColor: "limeGreen.main", padding: 2, margin: 2 }}
+        startIcon={<DeleteIcon />}
+      >
+        Click me I'm from MUI!
+      </Button>
       <main>
         {employees.map((employee) => (
           <Card
