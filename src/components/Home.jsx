@@ -6,6 +6,7 @@ import Form from "../components/Form";
 import axios from "axios";
 import { Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import EmployeesTable from "./EmployeesTable";
 // you can either import like this for mui icons and components
 
 function Home() {
@@ -78,6 +79,7 @@ function Home() {
 
   return (
     <div>
+      <EmployeesTable />
       <Button
         variant="contained"
         sx={{ backgroundColor: "limeGreen.main", padding: 2, margin: 2 }}

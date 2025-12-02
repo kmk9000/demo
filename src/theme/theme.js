@@ -2,6 +2,7 @@ import { createTheme } from "@mui/material";
 
 const theme = createTheme({
   palette: {
+    mode: "light",
     primary: {
       //   main: "#1976d2",
       main: "#4caf50",
@@ -17,6 +18,16 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "Roboto, Arial, sans-serif",
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          margin: "5px",
+          borderRadius: "8px",
+        },
+      },
+    },
   },
 });
 

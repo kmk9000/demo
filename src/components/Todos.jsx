@@ -34,7 +34,7 @@ const Todos = () => {
       {/* Connect todos to users */}
       {todos.map((todo) => (
         <div key={todo.id} className={styles.card}>
-          <h3 style={{ padding: "16px" }}>ID: {todo.id}</h3>
+          <p style={{ padding: "16px" }}>ID: {todo.id}</p>
           <p style={{ padding: "8px" }}>Title: {todo.title}</p>
           <p style={{ padding: "8px" }}>
             User: {users.find((user) => user.id === todo.userId)?.name}

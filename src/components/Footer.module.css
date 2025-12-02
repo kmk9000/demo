@@ -1,5 +1,7 @@
 .footer {
+  display: flex;
   flex: 1;
+  justify-content: center;
   border: solid 2px black;
   border-radius: 8px;
   margin: 0.5em 1em 0.5em 1em;

@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import axios from "axios";
 import styles from "./Card.module.css";
 import useAxios from "../hooks/useAxios";
+import { Card as CardMui } from "@mui/material";
 
 const SingleEmployee = () => {
   const { id } = useParams();
@@ -19,7 +20,7 @@ const SingleEmployee = () => {
     animal: employee?.animal || "",
   });
 
-  const url = `http://localhost:3001/employees/${id}`;
+  const url = `https://demo-27y6.onrender.com/employees/${id}`;
 
   const { data, loading, error } = useAxios(url);
 
@@ -34,12 +35,10 @@ const SingleEmployee = () => {
   };
 
   const handleSave = () => {
-    axios
-      .put(`http://localhost:3001/employees/${id}`, formData)
-      .then((response) => {
-        setEmployee(response.data);
-        setIsEditing(false);
-      });
+    axios.put(url, formData).then((response) => {
+      setEmployee(response.data);
+      setIsEditing(false);
+    });
   };
 
   useEffect(() => {
@@ -62,70 +61,99 @@ const SingleEmployee = () => {
 
   if (isEditing) {
     return (
-      <div className={styles.card}>
-        <form>
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
+      <CardMui sx={{ p: 2 }}>
+        <CardContent>
+          <Typography variant="h5" gutterBottom>
+            Edit Employee
+          </Typography>
+
+          <TextField
+            fullWidth
+            label="Name"
             name="name"
             value={formData.name}
             onChange={handleChange}
+            sx={{ mb: 2 }}
           />
-          <label htmlFor="name">Title</label>
-          <input
-            type="text"
+
+          <TextField
+            fullWidth
+            label="Title"
             name="title"
             value={formData.title}
             onChange={handleChange}
+            sx={{ mb: 2 }}
           />
-          <label htmlFor="name">Salary</label>
-          <input
-            type="text"
+
+          <TextField
+            fullWidth
+            label="Salary"
             name="salary"
             value={formData.salary}
             onChange={handleChange}
+            sx={{ mb: 2 }}
           />
-          <label htmlFor="name">Phone</label>
-          <input
-            type="text"
+
+          <TextField
+            fullWidth
+            label="Phone"
             name="phone"
             value={formData.phone}
             onChange={handleChange}
+            sx={{ mb: 2 }}
           />
-          <label htmlFor="name">Email</label>
-          <input
-            type="text"
+
+          <TextField
+            fullWidth
+            label="Email"
             name="email"
             value={formData.email}
             onChange={handleChange}
+            sx={{ mb: 2 }}
           />
-          <label htmlFor="name">Animal</label>
-          <input
-            type="text"
+
+          <TextField
+            fullWidth
+            label="Animal"
             name="animal"
             value={formData.animal}
             onChange={handleChange}
+            sx={{ mb: 2 }}
           />
-          {/* <button type="submit">Save</button> */}
-        </form>
-        <button onClick={toggleEdit}>Cancel editing</button>
-        <button onClick={handleSave}>Save</button>
-      </div>
+
+          <Button onClick={toggleEdit} sx={{ mr: 1 }}>
+            Cancel
+          </Button>
+          <Button variant="contained" onClick={handleSave}>
+            Save
+          </Button>
+        </CardContent>
+      </CardMui>
     );
   }
 
   return (
-    <div className={styles.card}>
-      <h3>Employee details</h3>
-      <p>Name: {employee?.name}</p>
-      <p>Title: {employee?.title}</p>
-      <p>Salary: {employee?.salary}</p>
-      <p>Phone: {employee?.phone}</p>
-      <p>Email: {employee?.email}</p>
-      <p>Animal: {employee?.animal}</p>
-      <p>Is Favourtite: {employee?.isFavourite ? "Yes" : "No"}</p>
-      <button onClick={toggleEdit}>Edit</button>
-    </div>
+    <CardMui sx={{ p: 2 }}>
+      <CardContent>
+        <Typography variant="h5" gutterBottom>
+          Employee details
+        </Typography>
+
+        <Typography>Name: {employee?.name}</Typography>
+        <Typography>Title: {employee?.title}</Typography>
+        <Typography>Salary: {employee?.salary}</Typography>
+        <Typography>Phone: {employee?.phone}</Typography>
+        <Typography>Email: {employee?.email}</Typography>
+        <Typography>Animal: {employee?.animal}</Typography>
+        <Typography>
+          Is Favourite: {employee?.isFavourite ? "Yes" : "No"}
+        </Typography>
+
+        <Button variant="contained" sx={{ mt: 2 }} onClick={toggleEdit}>
+          Edit
+        </Button>
+      </CardContent>
+    </CardMui>
   );
 };
 

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import styles from "./About.module.css";
+import CustomKideImage from "./CustomKideImage";
 
 const About = () => {
   const navigate = useNavigate;
@@ -7,7 +8,7 @@ const About = () => {
     navigate("/");
   };
   return (
-    <main>
+    <div>
       <div className={styles.card}>
         <h1>About hrApp</h1>
         <p>
@@ -37,7 +38,10 @@ const About = () => {
           convallis nulla, non condimentum odio.
         </p>
       </div>
-    </main>
+      <div style={{ width: "100%", height: "50%" }}>
+        <CustomKideImage />
+      </div>
+    </div>
   );
 };
 

@@ -1,8 +1,11 @@
 import styles from "./Card.module.css";
 import { useNavigate } from "react-router";
 import PropTypes from "prop-types";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { Card as CardMui } from "@mui/material";
+
+import CustomButton from "./CustomButton";
 
 export default function Card({
   name = "Example Name",
@@ -19,25 +22,33 @@ export default function Card({
   const navigate = useNavigate();
 
   return (
-    <div className={styles.card}>
-      <button onClick={() => toggleFavourite(id)}>Toggle Favourite</button>
+    <CardMui>
+      <CustomButton onClick={() => toggleFavourite(id)}>
+        Toggle Favourite
+      </CustomButton>
       <Button
         startIcon=<DeleteIcon />
+        variant="contained"
         onClick={() => handleDelete(id)}
-      ></Button>
-      <button onClick={() => handleDelete(id)}>Delete</button>
-      <h2>{name}</h2>
-      <p>Title: {title}</p>
-      <p>Salary: {salary}</p>
-      <p>Phone: {phone}</p>
-      <p>Email: {email}</p>
-      <p>Animal: {animal}</p>
+      >
+        Delete
+      </Button>
+
+      <div>
+        <Typography variant="h2">{name}</Typography>
+        <Typography>Title: {title}</Typography>
+        <Typography>Salary: {salary}</Typography>
+        <Typography>Phone: {phone}</Typography>
+        <Typography>Email: {email}</Typography>
+        <Typography>Animal: {animal}</Typography>
+      </div>
+
       <div className={styles.favourite}>{isFavourite && <span>❤️</span>}</div>
-      <button onClick={() => navigate(`/employees/${id}`)}>
+      <Button variant="contained" onClick={() => navigate(`/employees/${id}`)}>
         {" "}
         View Employee{" "}
-      </button>
-    </div>
+      </Button>
+    </CardMui>
   );
 }
 
