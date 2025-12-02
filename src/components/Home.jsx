@@ -25,7 +25,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("https://demo-27y6.onrender.com/employees")
+      .get(`/employees`)
       .then((response) => {
         setEmployees(response.data);
       })
@@ -38,16 +38,14 @@ function Home() {
   }, []);
 
   const handleDelete = (id) => {
-    axios
-      .delete(`https://demo-27y6.onrender.com/employees/${id}`)
-      .then((response) => {
-        setEmployees(employees.filter((employee) => employee.id !== id));
-      });
+    axios.delete(`${url}/${id}`).then((response) => {
+      setEmployees(employees.filter((employee) => employee.id !== id));
+    });
   };
 
   const handleClick = () => {
     axios
-      .post("https://demo-27y6.onrender.com/employees", {
+      .post(`${url}/employees`, {
         name: formData.name,
         title: formData.title,
         salary: formData.salary,
