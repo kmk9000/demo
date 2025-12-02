@@ -25,7 +25,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get(`/employees`)
+      .get(`${url}/employees`)
       .then((response) => {
         setEmployees(response.data);
       })
