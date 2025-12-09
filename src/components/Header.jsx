@@ -33,6 +33,14 @@ export default function Header() {
           </Button>
           <Button
             color="inherit"
+            variant={location.pathname === "/grid" ? "contained" : "text"}
+            component={Link}
+            to="/grid"
+          >
+            Grid
+          </Button>
+          <Button
+            color="inherit"
             variant={location.pathname === "/about" ? "contained" : "text"}
             component={Link}
             to="/about"

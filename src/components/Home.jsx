@@ -7,7 +7,11 @@ import axios from "axios";
 import { Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EmployeesTable from "./EmployeesTable";
+import OnButton from "./OnButton";
+import TextInput from "./TextInput";
+import TodoList from "./TodoList";
 // you can either import like this for mui icons and components
+import db from "../db.json";
 
 function Home() {
   const [count, setCount] = useState(0);
@@ -79,6 +83,9 @@ function Home() {
 
   return (
     <div>
+      <OnButton />
+      <TextInput />
+      <TodoList />
       <EmployeesTable />
       <Button
         variant="contained"

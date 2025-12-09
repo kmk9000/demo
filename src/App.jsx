@@ -13,6 +13,7 @@ import ErrorPage from "./components/ErrorPage";
 import Layout from "./Layout";
 import Todos from "./components/Todos";
 import SingleEmployee from "./components/SingleEmployee";
+import EmployeeDataGrid from "./components/EmployeeDataGrid";
 
 // function App() {
 //   return (
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/employees/:id",
         element: <SingleEmployee />,
+      },
+      {
+        path: "/grid",
+        element: <EmployeeDataGrid />,
       },
       {
         path: "/about",
